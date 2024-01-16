@@ -103,7 +103,7 @@ function NavBar() {
                   px={5}
                   border={"2px solid #0360D9"}
                   color={"primary"}
-                  bg={colorMode === "light" ? "background" : "#000"}
+                  bg={colorMode === "light" ? "background" : "transparent"}
                 >
                   Log in
                 </Button>

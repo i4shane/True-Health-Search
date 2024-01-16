@@ -6,3 +6,11 @@
     border-radius: 50%;
     background-color: #0360d0;
 }
+
+body {
+    background: white;
+}
+
+.dark body {
+    background: black;
+}

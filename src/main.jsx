@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import { myNewTheme } from "./styles/theme.js";
+import { myNewTheme } from "./styles/theme.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider theme={myNewTheme}>

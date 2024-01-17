@@ -4,6 +4,7 @@ import {
   Container,
   Flex,
   Link,
+  useColorModeValue,
   SimpleGrid,
   IconButton,
   useColorMode,
@@ -14,6 +15,11 @@ import { FaSun, FaMoon } from "react-icons/fa";
 
 function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const background = useColorModeValue(
+    "colors.background.light",
+    "colors.background.dark"
+  );
+
   return (
     <>
       <Box p={5}>
@@ -63,7 +69,6 @@ function NavBar() {
                   alignItems={"center"}
                   _hover={{
                     fontWeight: 600,
-
                     color: "primary",
                     "& .link-circle": { display: "block" },
                   }}
@@ -101,9 +106,10 @@ function NavBar() {
                   borderRadius={"50px"}
                   size={"md"}
                   px={5}
-                  border={"2px solid #0360D9"}
+                  border={`2px solid`}
+                  borderColor={"primary"}
                   color={"primary"}
-                  bg={colorMode === "light" ? "background" : "transparent"}
+                  bg={background}
                 >
                   Log in
                 </Button>
@@ -111,9 +117,9 @@ function NavBar() {
                   bg={"primary"}
                   borderRadius={"50px"}
                   px={5}
-                  _hover={{ bg: "#0360F9" }}
+                  _hover={{ bg: "primary" }}
                   size={"md"}
-                  color={colorMode === "light" ? "background" : "#000"}
+                  color={"white"}
                 >
                   Sign up
                 </Button>
@@ -127,4 +133,3 @@ function NavBar() {
 }
 
 export default NavBar;
-0;

@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -8,27 +9,50 @@ import {
   SimpleGrid,
   IconButton,
   useColorMode,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  VStack,
+  Spacer,
 } from "@chakra-ui/react";
 import "@fontsource/ibm-plex-sans/400.css";
-import "../styles/index.css";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaBars } from "react-icons/fa";
 
 function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [isOpen, setIsOpen] = useState(false);
+
   const background = useColorModeValue(
     "colors.background.light",
     "colors.background.dark"
   );
 
+  const handleDrawerToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <Box p={5}>
+      <Box paddingY={5}>
         <Container maxW={1400} fontFamily={"nav"}>
-          <SimpleGrid templateColumns={"repeat(3,1fr)"}>
-            <Box display={"flex"} alignItems={"center"}>
+          <Flex alignItems={"center"} justifyContent={"space-between"}>
+            <Box
+              minWidth={"150px"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
               <h2>True Health Search</h2>
             </Box>
-            <Flex gap={10} placeItems={"center"}>
+
+            <Flex
+              gap={10}
+              placeItems={"center"}
+              display={{ base: "none", md: "flex" }}
+            >
               <Box>
                 <Link
                   display={"flex"}
@@ -103,6 +127,7 @@ function NavBar() {
                   onClick={toggleColorMode}
                 />
                 <Button
+                  display={{ base: "none", md: "block" }}
                   borderRadius={"50px"}
                   size={"md"}
                   px={5}
@@ -114,6 +139,7 @@ function NavBar() {
                   Log in
                 </Button>
                 <Button
+                  display={{ base: "none", md: "block" }}
                   bg={"primary"}
                   borderRadius={"50px"}
                   px={5}
@@ -123,11 +149,73 @@ function NavBar() {
                 >
                   Sign up
                 </Button>
+                {/* Hamburger Icon for Mobile */}
+                <Box display={{ base: "block", md: "none" }}>
+                  <IconButton
+                    icon={<FaBars />}
+                    size={"md"}
+                    isRound={true}
+                    onClick={handleDrawerToggle}
+                  />
+                </Box>
               </Flex>
             </Box>
-          </SimpleGrid>
+          </Flex>
         </Container>
       </Box>
+
+      {/* Drawer for Mobile */}
+      <Drawer isOpen={isOpen} placement="right" onClose={handleDrawerToggle}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerBody>
+            <VStack
+              spacing={10}
+              align="center"
+              width={"100%"}
+              display={"flex"}
+              marginY={"20%"}
+            >
+              <Link href="#" _hover={{ fontWeight: 600, color: "primary" }}>
+                Home
+              </Link>
+              <Link href="#" _hover={{ fontWeight: 600, color: "primary" }}>
+                Services
+              </Link>
+              <Link href="#" _hover={{ fontWeight: 600, color: "primary" }}>
+                About
+              </Link>
+              <Link href="#" _hover={{ fontWeight: 600, color: "primary" }}>
+                Pricing
+              </Link>
+              {/* Login and Signup Buttons */}
+              <Button
+                width={"100%"}
+                size={"md"}
+                px={5}
+                border={`2px solid`}
+                borderColor={"primary"}
+                color={"primary"}
+                bg={background}
+              >
+                Log in
+              </Button>
+              <Button
+                bg={"primary"}
+                width={"100%"}
+                px={5}
+                _hover={{ bg: "primary" }}
+                size={"md"}
+                color={"white"}
+              >
+                Sign up
+              </Button>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 }

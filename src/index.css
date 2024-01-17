@@ -1,1 +1,15 @@
-import '@fontsource/ibm-plex-sans/400.css';
+.link-circle {
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #0360d0;
+}
+
+body {
+    background: white;
+}
+
+.dark body {
+    background: black;
+}

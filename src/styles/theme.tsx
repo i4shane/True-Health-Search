@@ -1,4 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
+
+
+
+
 export const myNewTheme = extendTheme({
   
   config: {
@@ -8,7 +12,7 @@ export const myNewTheme = extendTheme({
   colors: {
   primary: "#0360D9",
   secondary: "#000",
-    background: {
+  background: {
       light: "#fff",
       dark: "#000"
     },

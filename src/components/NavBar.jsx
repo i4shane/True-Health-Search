@@ -25,10 +25,7 @@ function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [isOpen, setIsOpen] = useState(false);
 
-  const background = useColorModeValue(
-    "colors.background.light",
-    "colors.background.dark"
-  );
+  const background = useColorModeValue("#fff", "#1A202C");
 
   const handleDrawerToggle = () => {
     setIsOpen(!isOpen);
@@ -145,7 +142,7 @@ function NavBar() {
                   px={5}
                   _hover={{ bg: "primary" }}
                   size={"md"}
-                  color={"white"}
+                  color={background}
                 >
                   Sign up
                 </Button>
@@ -208,7 +205,7 @@ function NavBar() {
                 px={5}
                 _hover={{ bg: "primary" }}
                 size={"md"}
-                color={"white"}
+                color={background}
               >
                 Sign up
               </Button>

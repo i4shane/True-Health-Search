@@ -59,7 +59,7 @@ function Hero() {
           </Button>
         </VStack>
         <Img
-          src="/public/Hero.png"
+          src="Hero.png"
           alt="Hero Image"
           boxSize={{ base: "100%", md: "auto" }}
           mb={{ base: 4, md: 0 }}

@@ -49,7 +49,7 @@ function WeOffer() {
         <Card maxW="sm" borderRadius={10} p={4} boxShadow={"md"}>
           {" "}
           <CardBody>
-            <Img src="/public/search.png" borderRadius="lg" />
+            <Img src="search.png" borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md" color={text} px={3}>
                 Comprehensive Search
@@ -64,7 +64,7 @@ function WeOffer() {
         <Card maxW="sm" borderRadius={10} p={4} boxShadow={"md"}>
           {" "}
           <CardBody>
-            <Img src="/public/resource.png" borderRadius="lg" />
+            <Img src="resource.png" borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md" color={text} px={3}>
                 Comprehensive Search
@@ -79,7 +79,7 @@ function WeOffer() {
         <Card maxW="sm" borderRadius={10} p={4} boxShadow={"md"}>
           {" "}
           <CardBody>
-            <Img src="/public/ai.png" borderRadius="lg" />
+            <Img src="ai.png" borderRadius="lg" />
             <Stack mt="6" spacing="3">
               <Heading size="md" color={text} px={3}>
                 Comprehensive Search

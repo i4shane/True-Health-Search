@@ -20,7 +20,7 @@ function WeOffer() {
   const text = useColorModeValue("#014DB0", "#fff");
 
   return (
-    <Box bg={"rgb(3, 96, 217, 16%)"}>
+    <Box bg={"rgb(3, 96, 217, 16%)"} pb={"50px"}>
       <VStack
         textAlign={"center"}
         p={{ base: 5, md: 10 }}

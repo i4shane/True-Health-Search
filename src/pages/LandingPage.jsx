@@ -1,20 +1,25 @@
 import { HStack, VStack } from "@chakra-ui/react";
 import React from "react";
-import Hero from "./sections/Hero";
-import WeOffer from "./sections/WeOffer";
-import About from "./sections/About";
-import FAQSection from "./sections/FAQ";
-import Footer from "./sections/Footer";
+import Hero from "./sections/landingpage/Hero";
+import WeOffer from "./sections/landingpage/WeOffer";
+import About from "./sections/landingpage/About";
+import FAQSection from "./sections/landingpage/FAQ";
+import Footer from "./sections/landingpage/Footer";
+import NavBar from "../components/NavBar";
 
 function LandingPage() {
   return (
-    <VStack>
+    <>
+    <NavBar/>
+     <VStack>
       <Hero />
       <WeOffer />
       <About />
       <FAQSection />
       <Footer />
     </VStack>
+    </>
+   
   );
 }
 

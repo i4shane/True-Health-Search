@@ -1,12 +1,14 @@
-import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage.jsx";
+import AiChat from "./pages/AiChat.jsx";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <LandingPage />
-    </>
+    <Routes>
+      <Route  path="/" element={<LandingPage />}></Route>
+      <Route  path="/chat" element={<AiChat/>}></Route>
+   
+    </Routes>      
   );
 }
 

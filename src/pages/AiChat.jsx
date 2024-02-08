@@ -1,8 +1,7 @@
 import React from 'react';
 import { Flex, Heading, Spacer, VStack ,Box, Text, SimpleGrid, Button, IconButton} from '@chakra-ui/react';
-import Sidebar from './sections/aichat/Sidebar';
-import ChatInterface from './sections/aichat/ChatInterFace';
-import { FaMoon } from 'react-icons/fa';
+import Sidebar from './sections/aichat/SideBar.jsx';
+import ChatInterface from './sections/aichat/ChatInterFace.jsx';
 
 function AiChat() {
   return (
